@@ -194,6 +194,36 @@ h1, h2, h3 {
   font-size: 17px;
 }
 
+.progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+  max-width: 480px;
+}
+
+.progress-bar {
+  flex: 1 1 auto;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.progress-label {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
 .back-link {
   display: inline-flex;
   align-items: center;
@@ -311,6 +341,10 @@ h1, h2, h3 {
   stroke-linejoin: round;
 }
 
+.icon-badge {
+  position: relative;
+}
+
 .card-top-meta {
   display: flex;
   flex-direction: column;
@@ -322,6 +356,27 @@ h1, h2, h3 {
 .card .modul-nr {
   font-family: var(--font-mono);
   font-size: 12px;
+  color: var(--ink-faint);
+}
+
+.open-link.done {
+  color: var(--accent-strong);
+  font-weight: 600;
+}
+
+.card.card-done {
+  background: repeating-linear-gradient(
+    135deg,
+    var(--accent-tint) 0px,
+    var(--accent-tint) 9px,
+    var(--surface-sunken) 9px,
+    var(--surface-sunken) 18px
+  );
+  border-color: transparent;
+}
+
+.card.card-done .icon-badge {
+  background: var(--surface);
   color: var(--ink-faint);
 }
 
@@ -572,6 +627,10 @@ h1, h2, h3 {
     <div class="kicker">VG1 Idrett · ENG01-06 · Sauda vidaregåande skule</div>
     <h1>Engelsk VG1 Idrett</h1>
     <p class="lede">Årshjulet for engelskfaget, modul for modul. Velg en modul under for å komme til oppgaver og ressurser — eller bruk kompetansemåla (K1–K17) nederst på siden som oppslagsverk.</p>
+    <div class="progress" role="group" aria-label="Fremdrift i årsplanen">
+      <div class="progress-bar"><div class="progress-fill" style="width:20%"></div></div>
+      <span class="progress-label">3 av 15 moduler fullført · t.o.m. uke 38</span>
+    </div>
   </div>
 </header>
 
@@ -583,9 +642,9 @@ h1, h2, h3 {
     </div>
     <p class="checkpoint-strip"><strong>Ellers i kalenderen:</strong> Uke 41 Høstferie · Uke 50 Repetisjon / heldagsprøve · Uke 51 Buffer / oppsummering · Uke 52 Juleferie</p>
     <div class="grid">
-        <a class="card" href="moduler/oppstart.html">
+        <a class="card card-done" href="moduler/oppstart.html">
           <div class="card-top">
-            <span class="icon-badge"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#1f4e4d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.3"/><path d="M14.6 9.4 10.6 10.6 9.4 14.6 13.4 13.4Z"/><circle cx="12" cy="12" r="0.9" fill="currentColor" stroke="none"/></svg></span>
+            <span class="icon-badge"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#8890a0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.3"/><path d="M14.6 9.4 10.6 10.6 9.4 14.6 13.4 13.4Z"/><circle cx="12" cy="12" r="0.9" fill="currentColor" stroke="none"/></svg></span>
             <div class="card-top-meta">
               <span class="eyebrow">Uke 35–36</span>
               <span class="modul-nr">Modul 01</span>
@@ -599,12 +658,12 @@ h1, h2, h3 {
 <span class="code-chip" title="Bruke egnede digitale ressurser og andre hjelpemidler i språklæring, tekstskaping og samhandling">K2</span>
 <span class="code-chip" title="Lytte til, forstå og bruke akademisk språk i arbeid med egne muntlige og skriftlige tekster">K4</span>
             </div>
-            <span class="open-link">Åpne modul →</span>
+            <span class="open-link done">Fullført</span>
           </div>
         </a>
-        <a class="card" href="moduler/rise-of-english.html">
+        <a class="card card-done" href="moduler/rise-of-english.html">
           <div class="card-top">
-            <span class="icon-badge"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#1f4e4d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18.5h16"/><path d="M6.3 15.3a5.7 5.7 0 0 1 11.4 0"/><path d="M12 5.7v2.4"/><path d="M6.6 9.3l1.7 1.7"/><path d="M17.4 9.3l-1.7 1.7"/></svg></span>
+            <span class="icon-badge"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#8890a0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18.5h16"/><path d="M6.3 15.3a5.7 5.7 0 0 1 11.4 0"/><path d="M12 5.7v2.4"/><path d="M6.6 9.3l1.7 1.7"/><path d="M17.4 9.3l-1.7 1.7"/></svg></span>
             <div class="card-top-meta">
               <span class="eyebrow">Uke 37</span>
               <span class="modul-nr">Modul 02</span>
@@ -618,12 +677,12 @@ h1, h2, h3 {
 <span class="code-chip" title="Gjøre rede for andres argumentasjon og bruke og følge opp andres innspill i samtaler og diskusjoner om ulike emner">K6</span>
 <span class="code-chip" title="Lytte til, forstå og bruke akademisk språk i arbeid med egne muntlige og skriftlige tekster">K4</span>
             </div>
-            <span class="open-link">Åpne modul →</span>
+            <span class="open-link done">Fullført</span>
           </div>
         </a>
-        <a class="card" href="moduler/varieties-of-english.html">
+        <a class="card card-done" href="moduler/varieties-of-english.html">
           <div class="card-top">
-            <span class="icon-badge"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#1f4e4d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.3" y="5.3" width="12" height="8" rx="3"/><path d="M6.8 13.3v2.7l3-2.7"/><rect x="8.7" y="10.7" width="12" height="8" rx="3"/><path d="M16.2 18.7v2.7l-3-2.7"/></svg></span>
+            <span class="icon-badge"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#8890a0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.3" y="5.3" width="12" height="8" rx="3"/><path d="M6.8 13.3v2.7l3-2.7"/><rect x="8.7" y="10.7" width="12" height="8" rx="3"/><path d="M16.2 18.7v2.7l-3-2.7"/></svg></span>
             <div class="card-top-meta">
               <span class="eyebrow">Uke 38</span>
               <span class="modul-nr">Modul 03</span>
@@ -636,7 +695,7 @@ h1, h2, h3 {
 <span class="code-chip" title="Bruke mønstre for uttale i kommunikasjon">K3</span>
 <span class="code-chip" title="Bruke kunnskap om sammenhenger mellom engelsk og andre språk eleven kjenner til i egen språklæring">K7</span>
             </div>
-            <span class="open-link">Åpne modul →</span>
+            <span class="open-link done">Fullført</span>
           </div>
         </a>
         <a class="card" href="moduler/den-engelskspraklige-verden.html">
